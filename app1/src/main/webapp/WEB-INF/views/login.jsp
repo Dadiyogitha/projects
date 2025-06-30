@@ -26,6 +26,7 @@
 
         <input type="submit" value="Login" />
     </form>
+    <p>Don't have an account? <a href="/register">Sign up</a></p>
 </body>
 </html>
 

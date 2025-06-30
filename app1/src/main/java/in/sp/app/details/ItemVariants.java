@@ -26,7 +26,7 @@ public class ItemVariants {
 	
 	@ManyToOne
 	@JoinColumn(name="itemId")
-	private Items item;
+	private Product item;
 	@OneToMany
 	@JoinColumn(name = "ItemVariants_Id")
 	private List<OrderedItem> ordereditems; 

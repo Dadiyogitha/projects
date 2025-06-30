@@ -1,5 +1,7 @@
 package in.sp.app.Controller;
 
+
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -49,7 +51,7 @@ public class LoginController {
 	@GetMapping("/auth")
 	public String authenticateUser(@RequestParam("email") String email, @RequestParam("password") String password) {
 		try {
-			Connection conn = DbCon.getConnection();
+			Connection conn = DbCon.getCon();
 			String query = "select * from User_Details";
 			PreparedStatement ps = conn.prepareStatement(query);
 			ResultSet rs = ps.executeQuery();

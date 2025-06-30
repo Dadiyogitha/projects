@@ -32,17 +32,28 @@ public class User {
 	@JoinColumn(name="User_id")
 	private List<Order> order;
 	
+	public User() {}
+
+	public User(String firstName, String lastName, String email, String phno, String username, String password) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.phno = phno;
+		this.username = username;
+		this.password = password;
+	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
 	public void setFirstName(String firstName) {
-		firstName = firstName;
+		this.firstName = firstName;
 	}
 	public String getLastName() {
 		return lastName;
 	}
 	public void setLastName(String lastName) {
-		lastName = lastName;
+		this.lastName = lastName;
 	}
 	public String getEmail() {
 		return email;
@@ -75,6 +86,16 @@ public class User {
 		this.userid = userid;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "User{" +
+				"userid=" + userid +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", email='" + email + '\'' +
+				", phno='" + phno + '\'' +
+				", username='" + username + '\'' +
+				'}';
+	}
 
 }

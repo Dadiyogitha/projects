@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -23,9 +24,15 @@
 
 <h2 style="text-align:center;">Register User</h2>
 
+<!-- Display error or success messages -->
+<c:if test="${not empty error}">
+    <div style="color:red; text-align:center;">${error}</div>
+</c:if>
+<c:if test="${not empty success}">
+    <div style="color:green; text-align:center;">${success}</div>
+</c:if>
+
 <form action="register" method="post">
-<label for="id">ID:</label>
-    <input type="text" name="userid" required>
     <label for="firstName">First Name:</label>
     <input type="text" name="firstName" required>
 
@@ -45,6 +52,8 @@
     <input type="password" name="password" required>
 
     <input type="submit" value="Register">
+    
+    <p>Already have an account? <a href="/login">Login</a></p>
 </form>
 
 </body>

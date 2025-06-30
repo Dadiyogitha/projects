@@ -13,31 +13,35 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="Items")
-public class Items {
+@Table(name="product")
+public class Product {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int itemId;
-	@Column(name="Items_Name")
-	private String itemName;
+	private int productId;
+	@Column(name="Iproduct_Name")
+	private String productName;
 	@Column(name="Product_Descrption")
 	private String description;
-	@Column(name="Category")
-	private String category;
+	@Column(name="price")
+	private double price;
+	@Column(name="image")
+	private String image;
+	
+	
 	@OneToMany
 	@JoinColumn(name="ItemVariants_Id")
 	 private List<ItemVariants> itemVariants;
 	 public int getItemId() {
-		 return itemId;
+		 return productId;
 	 }
-	 public void setItemId(int itemId) {
-		 this.itemId = itemId;
+	 public void setProductId(int productId) {
+		 this.productId = productId;
 	 }
-	 public String getItemName() {
-		 return itemName;
+	 public String getProductName() {
+		 return productName;
 	 }
-	 public void setItemName(String itemName) {
-		 this.itemName = itemName;
+	 public void setProductName(String productName) {
+		 this.productName = productName;
 	 }
 	 public String getDescription() {
 		 return description;
@@ -45,13 +49,22 @@ public class Items {
 	 public void setDescription(String description) {
 		 this.description = description;
 	 }
-	 public String getCategory() {
-		 return category;
+	 public Double getPrice() {
+		 return price;
 	 }
-	 public void setCategory(String category) {
-		 this.category = category;
+	 public void setPrice(double d) {
+		 this.price = d;
 	 }
-	 
+	 public String getImage() {
+		 return image;
+	 }
+	 public void setImage(String image) {
+		 this.image = image;
+	 }
+	 public int getProductId() {
+		 return productId;
+	 }
+	
 	 
 	
 	
