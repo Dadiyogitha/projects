@@ -1,4 +1,4 @@
-package in.sp.app.details;
+package in.sp.app.entities;
 
 import java.time.LocalDateTime;
 import java.util.List;

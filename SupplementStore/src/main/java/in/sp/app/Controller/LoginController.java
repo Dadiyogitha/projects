@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import in.sp.app.details.DbCon;
-import in.sp.app.details.User;
+import in.sp.app.entities.DbCon;
+import in.sp.app.entities.User;
 @Controller
 @RequestMapping("/store")
 public class LoginController {
