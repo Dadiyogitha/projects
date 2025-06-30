@@ -17,6 +17,7 @@ public class User {
 	private String lastName;
 	@Column(name="Email")
 	private String email;
+	
 	@Column(name="Phno")
 	private String phno;
 	@Column(name="UserName")
