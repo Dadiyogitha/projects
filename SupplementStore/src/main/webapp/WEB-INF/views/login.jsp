@@ -15,7 +15,7 @@
         <div style="color:red;">${error}</div>
     </c:if>
     
-    <form action="userlogin" method="post">
+    <form action="/store/authWithSpringData" method="post">
         <label for="username">Username:</label>
         <input type="text" name="username" id="username" required />
         <br><br>

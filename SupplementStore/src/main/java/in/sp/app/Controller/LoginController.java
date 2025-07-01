@@ -14,37 +14,38 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import in.sp.app.Respositories.UserRespository;
-import in.sp.app.entities.DbCon;
-import in.sp.app.entities.User;
+import in.sp.app.Entities.User;
+import in.sp.app.Service.DashboardService;
+import in.sp.app.Service.LoginService;
+import in.sp.app.Utils.DbCon;
 @Controller
 @RequestMapping("/store")
-public class LoginController {
-	
+public class LoginController {	
 	@RequestMapping("/register")
 	public String getRegisterpage() {
-		return "register";
-		
+		return "register";	
 	}
-	
-	
 	@Autowired
-	private UserRespository userRepo;
-	
+	public DashboardService dashboardService;
+	@Autowired
+	public LoginService loginService;
 	  @GetMapping("/login")
 	    public String showLoginForm() {
-	        return "login"; // login.html
+	        return "login"; 
 	    }
-	@PostMapping("/userlogin")
+	@PostMapping("/authWithSpringData")
 	public String auth(@RequestParam("username") String username, @RequestParam("password") String password,Model m) {
-		User user=userRepo.findByUsernameAndPassword(username, password);
-		if(user!=null) {
-			m.addAttribute("user",user);
-			return "Welcome " + user.getFirstName();
-		}else {
-			m.addAttribute("error", "Invalid credentials");
-			return "login";
+		User loggedinUser =loginService.authUserBySpringData(username, password);
+		if(loggedinUser !=null) {
+			m.addAttribute("loggedinUser", loggedinUser);
+			m.addAttribute("productList",dashboardService.getAllProductsList());
+			m.addAttribute("imageStyle", "style='width:auto; height:auto; max-width:auto;'");
+			return "dashboard";
 		}
+		else {
+		return password;
+		}
+		
 		
 		
 	}

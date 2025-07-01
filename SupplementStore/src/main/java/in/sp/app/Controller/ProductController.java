@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import in.sp.app.entities.DbCon;
-import in.sp.app.entities.Product;
+import in.sp.app.Entities.Product;
+import in.sp.app.Utils.DbCon;
 
 @Controller
 @RequestMapping("/product")

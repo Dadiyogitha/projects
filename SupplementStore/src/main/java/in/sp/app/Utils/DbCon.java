@@ -1,4 +1,4 @@
-package in.sp.app.entities;
+package in.sp.app.Utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
