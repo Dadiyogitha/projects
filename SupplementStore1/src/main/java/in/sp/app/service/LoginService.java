@@ -1,4 +1,4 @@
-package in.sp.app.Service;
+package in.sp.app.service;
 
 import java.util.List;
 

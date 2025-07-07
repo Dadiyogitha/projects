@@ -34,10 +34,10 @@ public class ProductController {
             while (rs.next()) {
                 Product product = new Product();
                 product.setProductId(rs.getInt("product_id"));
-                product.setProductName(rs.getString("product_name"));
                 product.setDescription(rs.getString("description"));
-                product.setPrice(rs.getDouble("price"));
                 product.setImage(rs.getString("image"));
+                product.setPrice(rs.getDouble("price"));
+                product.setProductName(rs.getString("productname"));
                 products.add(product);
              } 
              conn.close();
@@ -54,21 +54,21 @@ public class ProductController {
     }
 
     @PostMapping("/saveProduct")
-    public String saveProduct(@RequestParam String productName, @RequestParam String description, @RequestParam double price, @RequestParam MultipartFile imageFile) throws ClassNotFoundException, SQLException, IllegalStateException, IOException {
-        Connection conn = DbCon.getCon();
-             PreparedStatement pstmt = conn.prepareStatement("INSERT INTO products (product_name, description, price, image) VALUES (?, ?, ?, ?)"); 
+    public String saveProduct( @RequestParam("description") String description, @RequestParam("imageFile") MultipartFile imageFile,@RequestParam("price") double price,@RequestParam("productname") String productname ) throws ClassNotFoundException, SQLException, IllegalStateException, IOException {
+    	System.out.println("Received: " + productname);
+          Connection conn = DbCon.getCon();
+           PreparedStatement pstmt = conn.prepareStatement("INSERT INTO product ( description,image, price,productname ) VALUES (?, ?, ?, ?)"); 
 
             String imageName = UUID.randomUUID().toString() + "_" + imageFile.getOriginalFilename();
             imageFile.transferTo(new File("/path/to/images/" + imageName));
-
-            pstmt.setString(1, productName);
-            pstmt.setString(2, description);
+            pstmt.setString(1, description);
+            pstmt.setString(2, imageName);
             pstmt.setDouble(3, price);
-            pstmt.setString(4, imageName);
+            pstmt.setString(4, productname);
             pstmt.executeUpdate();
             conn.close();
         
-        return "redirect:/products";
+        return "redirect:/product/products";
     }
 
     }

@@ -11,16 +11,16 @@ public class User {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="User_id")
 	private int userid;
-	@Column(name="First_Name")
-	private String firstName;
-	@Column(name="Last_Name")
-	private String lastName;
-	@Column(name="Email")
+	@Column(name="Firstname")
+	private String firstname;
+	@Column(name="Lastname")
+	private String lastname;
+	@Column(name="email")
 	private String email;
 	
 	@Column(name="Phno")
 	private String phno;
-	@Column(name="UserName")
+	@Column(name="Username")
 	private String username;
 	@Column(name="Password")
 	private String password;
@@ -35,9 +35,9 @@ public class User {
 	
 	public User() {}
 
-	public User(String firstName, String lastName, String email, String phno, String username, String password) {
-		this.firstName = firstName;
-		this.lastName = lastName;
+	public User(String firstNname, String lastname, String email, String phno, String username, String password) {
+		this.firstname = firstname;
+		this.lastname = lastname;
 		this.email = email;
 		this.phno = phno;
 		this.username = username;
@@ -45,16 +45,16 @@ public class User {
 	}
 	
 	public String getFirstName() {
-		return firstName;
+		return firstname;
 	}
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		this.firstname = firstName;
 	}
 	public String getLastName() {
-		return lastName;
+		return lastname;
 	}
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		this.lastname = lastName;
 	}
 	public String getEmail() {
 		return email;
@@ -91,8 +91,8 @@ public class User {
 	public String toString() {
 		return "User{" +
 				"userid=" + userid +
-				", firstName='" + firstName + '\'' +
-				", lastName='" + lastName + '\'' +
+				", firstname='" + firstname + '\'' +
+				", lastname='" + lastname + '\'' +
 				", email='" + email + '\'' +
 				", phno='" + phno + '\'' +
 				", username='" + username + '\'' +

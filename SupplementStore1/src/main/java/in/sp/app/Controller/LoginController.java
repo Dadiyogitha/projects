@@ -17,13 +17,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import in.sp.app.Entities.User;
-import in.sp.app.Service.DashboardService;
-import in.sp.app.Service.LoginService;
-import in.sp.app.Service.UserService;
 import in.sp.app.Utils.DbCon;
+import in.sp.app.service.DashboardService;
+import in.sp.app.service.LoginService;
+import in.sp.app.service.UserService;
 @Controller
 @RequestMapping("/store")
 public class LoginController {	
+	@Autowired
 	public UserService userService;
 	 @GetMapping("/register")
 	    public String registerPage(Model model) {
@@ -38,7 +39,8 @@ public class LoginController {
 	            model.addAttribute("message", message);
 	            return "RegisterSuccess";
 	        } catch (Exception e) {
-	            model.addAttribute("error", "Error registering user");
+	        	e.printStackTrace(); 
+	            model.addAttribute("error", "Error registering user"  + e.getMessage());
 	            return "register";
 	        }
 	    }
@@ -66,6 +68,7 @@ public class LoginController {
                 return "login";
             }
         } catch (Exception e) {
+        	e.printStackTrace(); 
             model.addAttribute("error", "Error logging in");
             return "login";
         }

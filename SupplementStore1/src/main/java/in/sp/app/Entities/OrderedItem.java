@@ -10,15 +10,15 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="ordered_items")
+@Table(name="ordereditems")
 public class OrderedItem {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ordered_Item_Id")
 	private Long orderedItemId;
-	@Column(name="Quantity")
+	@Column(name="quantity")
 	private int quantity;
-	@Column(name="Price")
+	@Column(name="price")
 	private Double price;
 	
 	@ManyToOne

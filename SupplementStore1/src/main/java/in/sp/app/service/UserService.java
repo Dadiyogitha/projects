@@ -1,4 +1,4 @@
-package in.sp.app.Service;
+package in.sp.app.service;
 
 import java.util.List;
 
@@ -21,6 +21,7 @@ public class UserService {
         return "Registration successful!";
       }
     catch(Exception e) {
+    	e.printStackTrace(); 
     	 return"Error registering user";
          
     }

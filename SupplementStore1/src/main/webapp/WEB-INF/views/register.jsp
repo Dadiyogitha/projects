@@ -32,24 +32,21 @@
     <div style="color:green; text-align:center;">${success}</div>
 </c:if>
 
-<form action="register" method="post">
-    <label for="firstName">First Name:</label>
-    <input type="text" name="firstName" required>
-
-    <label for="lastName">Last Name:</label>
-    <input type="text" name="lastName" required>
-
+<form action="/store/register" method="post">
     <label for="email">Email:</label>
     <input type="email" name="email" required>
-
+    <label for="firstName">First Name:</label>
+    <input type="text" name="firstname" required>
+    <label for="lastName">Last Name:</label>
+    <input type="text" name="lastname" required>
+    <label for="password">Password:</label>
+    <input type="password" name="password" required>
     <label for="phno">Phone Number:</label>
     <input type="text" name="phno" required>
-
     <label for="username">Username:</label>
     <input type="text" name="username" required>
 
-    <label for="password">Password:</label>
-    <input type="password" name="password" required>
+    
 
     <input type="submit" value="Register">
     
