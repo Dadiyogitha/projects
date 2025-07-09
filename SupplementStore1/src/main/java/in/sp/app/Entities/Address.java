@@ -16,8 +16,8 @@ public class Address {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int a_id;
-	@Column(name="Address")
-	private String address1;
+	@Column(name="address")
+	private String address;
 	@Column(name="city")
 	private String city;
 	@Column(name="state")
@@ -30,14 +30,14 @@ public class Address {
 	
 	
 	@ManyToOne
-	@JoinColumn(name = "User_id")
+	@JoinColumn(name = "userid")
 	private User user;
 	
-	public String getAddress1() {
-		return address1;
+	public String getAddress() {
+		return address;
 	}
-	public void setAddress1(String address1) {
-		this.address1 = address1;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public String getCity() {
 		return city;

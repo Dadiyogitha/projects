@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 public class OrderedItem {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ordered_Item_Id")
+	@Column(name="orderedItemId")
 	private Long orderedItemId;
 	@Column(name="quantity")
 	private int quantity;

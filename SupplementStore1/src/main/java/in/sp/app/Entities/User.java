@@ -9,33 +9,33 @@ import jakarta.persistence.*;
 public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="User_id")
+	
 	private int userid;
-	@Column(name="Firstname")
+	
 	private String firstname;
-	@Column(name="Lastname")
+	
 	private String lastname;
-	@Column(name="email")
+	
 	private String email;
 	
-	@Column(name="Phno")
+	
 	private String phno;
-	@Column(name="Username")
+
 	private String username;
-	@Column(name="Password")
+	
 	private String password;
 	
 	@OneToMany
-	@JoinColumn(name="User_id")
+	@JoinColumn(name="userid")
 	private List<Address> address;
 	
 	@OneToMany
-	@JoinColumn(name="User_id")
+	@JoinColumn(name="userid")
 	private List<Order> order;
 	
 	public User() {}
 
-	public User(String firstNname, String lastname, String email, String phno, String username, String password) {
+	public User(String firstname, String lastname, String email, String phno, String username, String password) {
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.email = email;
@@ -47,14 +47,14 @@ public class User {
 	public String getFirstName() {
 		return firstname;
 	}
-	public void setFirstName(String firstName) {
-		this.firstname = firstName;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 	public String getLastName() {
 		return lastname;
 	}
-	public void setLastName(String lastName) {
-		this.lastname = lastName;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 	public String getEmail() {
 		return email;

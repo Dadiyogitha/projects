@@ -35,9 +35,9 @@
 <form action="/store/register" method="post">
     <label for="email">Email:</label>
     <input type="email" name="email" required>
-    <label for="firstName">First Name:</label>
+    <label for="firstname">First Name:</label>
     <input type="text" name="firstname" required>
-    <label for="lastName">Last Name:</label>
+    <label for="lastname">Last Name:</label>
     <input type="text" name="lastname" required>
     <label for="password">Password:</label>
     <input type="password" name="password" required>

@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="/product/saveProduct" method="post" enctype="multipart/form-data">
+<form action="/product/uploadproduct" method="post" enctype="multipart/form-data">
     Description: <input type="text" name="description"><br>
-    Image: <input type="file" name="imageFile"><br>
+    Image: <input type="file" name="image"><br>
     Price: <input type="text" name="price"><br>
     Product Name: <input type="text" name="productname"><br>
     <input type="submit" value="Add Product">

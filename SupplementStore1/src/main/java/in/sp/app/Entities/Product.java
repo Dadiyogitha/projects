@@ -28,6 +28,18 @@ public class Product {
 	private String image;
 	
 	
+	public String getProductname() {
+		return productname;
+	}
+	public void setProductname(String productname) {
+		this.productname = productname;
+	}
+	public List<ItemVariants> getItemVariants() {
+		return itemVariants;
+	}
+	public void setItemVariants(List<ItemVariants> itemVariants) {
+		this.itemVariants = itemVariants;
+	}
 	@OneToMany
 	@JoinColumn(name="ItemVariants_Id")
 	 private List<ItemVariants> itemVariants;

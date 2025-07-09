@@ -12,8 +12,8 @@ public class LoginService {
 	
 	@Autowired
 	public UserRepository userRepo;
-	public User authUserBySpringData(String userName,String password) {
-		List<User> userList=userRepo.findByUsernameAndPassword(userName, password);
+	public User authUserBySpringData(String username,String password) {
+		List<User> userList=userRepo.findByUsernameAndPassword(username, password);
 		if(userList.size()==1) {
 			return userList.get(0);
 		}

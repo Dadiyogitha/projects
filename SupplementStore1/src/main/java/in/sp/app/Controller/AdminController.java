@@ -11,25 +11,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import in.sp.app.Entities.Product;
 import in.sp.app.service.ProductService;
 
-
+@Controller
+@RequestMapping("/admin")
 public class AdminController {
-	@Controller
-	@RequestMapping("/admin")
+	
 	public class ProductController {
 	    @Autowired
 	    private ProductService productService;
 
-	    @RequestMapping("/products")
+	    @GetMapping("/products")
 	    public String listProducts(Model model) {
 	        List<Product> products = productService.getAllProducts();
 	        model.addAttribute("products", products);
-	        return "product_list";
+	        return "Product";
 	    }
 
-	    @GetMapping("/products/add")
-	    public String showAddProductForm(Model model) {
-	        model.addAttribute("product", new Product());
-	        return "add_product";
+	    @GetMapping("/addProducts")
+	    public String addProductPage() {
+	        return "addProduct";
 	    }
 
 }

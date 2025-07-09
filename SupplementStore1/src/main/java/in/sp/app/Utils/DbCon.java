@@ -8,7 +8,7 @@ public class DbCon {
 
 	final static String USER_NAME = "root";
 	final static String PASSWORD = "1234";
-	final static String DB_URL = "jdbc:mysql://localhost:3306/project1";
+	final static String DB_URL = "jdbc:mysql://localhost:3306/store";
 	final static String DRIVER = "com.mysql.cj.jdbc.Driver";
 
 	public static Connection getCon() throws ClassNotFoundException, SQLException {

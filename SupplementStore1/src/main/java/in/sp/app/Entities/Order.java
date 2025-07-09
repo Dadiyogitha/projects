@@ -20,8 +20,8 @@ import jakarta.persistence.Table;
 public class Order {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="Order_id")
-	private long orderId;
+	@Column(name="Orderid")
+	private long orderid;
 	@Column(name="Status")
 	private String status;
 	
@@ -30,19 +30,19 @@ public class Order {
 	private LocalDateTime orderedOn;
 	
 	@ManyToOne
-    @JoinColumn(name="user_id", referencedColumnName="User_id")
+    @JoinColumn(name="userid", referencedColumnName="userid")
 	private User user;
 	
 	@OneToMany
-	@JoinColumn(name="Order_id")
+	@JoinColumn(name="Orderid")
 	private List<OrderedItem> orderitems;
  
-	public long getOrderId() {
-		return orderId;
+	public long getOrderid() {
+		return orderid;
 	}
 
-	public void setOrderId(long orderId) {
-		this.orderId = orderId;
+	public void setOrderid(long orderid) {
+		this.orderid = orderid;
 	}
 
 	public String getStatus() {
